@@ -12,6 +12,8 @@ Pakyow::App.define do
     end
 
     app.name = 'help-desk'
+
+    app.db = Sequel.connect(ENV['DATABASE_URL'])
   end
 
   configure :development do

@@ -3,7 +3,7 @@ This is a simple example of a realtime pakyow application.
 To run it:
 
 ```bash
-gem install pakyow`
+gem install pakyow
 
 git clone git@github.com:jphager2/pakyow-help-desk.git
 

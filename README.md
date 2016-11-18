@@ -1,28 +1,28 @@
-This is a Pakyow v0.10 project.
+This is a simple example of a realtime pakyow application.
 
-# Getting Started
+To run it:
 
-Start the server:
+```bash
+gem install pakyow`
 
-  `bundle exec pakyow server`
+git clone git@github.com:jphager2/pakyow-help-desk.git
 
-You'll find your app running at [http://localhost:3000](http://localhost:3000)!
+cd pakyow-help-desk
 
-Need to interact with your code? Fire up a console:
+bundle install
+```
 
-  `bundle exec pakyow console`
+Set up a new postges database and export the postges url for the database to the `DATABASE_URL` environment variable or put it in .env.development
 
-# Next Steps
+e.g. `DATABASE_URL=postgresql://localhost:5432/help_desk_pakyow_dev`
 
-The following resources might be handy:
+Then:
 
-- [Website](http://pakyow.org)
-- [Docs](http://pakyow.org/docs)
-- [Code](http://github.com/pakyow/pakyow)
+```bash
+rake db:create
+rake db:migrate
 
-Want to keep up with the latest development? Follow along:
+pakyow s
+```
 
-- [Blog](http://pakyow.org/blog)
-- [Forums](http://forums.pakyow.org)
-- [Gitter](https://gitter.im/pakyow/chat)
-- [Twitter](http://twitter.com/pakyow)
+Now the server is started and you can point your browser to localhost:3000 to see the app.

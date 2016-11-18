@@ -2,7 +2,7 @@
 
 <p>Create a Ticket</p>
 
-<form data-scope="ticket">
+<form data-scope="ticket" data-ui="mutable">
   <label for="ticket_title">Title</label>
   <input data-prop="title" type="text">
   <br>
@@ -19,11 +19,19 @@
 <ul>
   <li data-scope="active-ticket">
     <h4>
-      <span data-prop="title">An active ticket</span>
-      (<span data-prop="status">Active Status</span>)
+      <span data-prop="title">Active ticket</span>
+      (<small data-prop="status">No status</small>)
+      <small>
+        <form data-prop="open-link" data-ui="mutable" class="inline-form">
+          <input type="submit" value="open">
+        </form>
+        <form data-prop="close-link" data-ui="mutable" class="inline-form">
+          <input type="submit" value="close">
+        </form>
+      </small>
     </h4>
     <p data-prop="description">
-      There is some problem that I need solved. Please solve it...
+      No description given...
     </p>
   </li>
 </ul>
@@ -31,6 +39,11 @@
 <h2>Closed Tickets</h2>
 <ul>
   <li data-scope="closed-ticket">
-    <h4 data-prop="title">A closed ticket</h4>
+    <h4>
+      <span data-prop="title">Closed ticket</span>
+      <form data-prop="delete-link" data-ui="mutable" class="inline-form">
+        <input type="submit" value="delete">
+      </form>
+    </h4>
   </li>
 </ul>

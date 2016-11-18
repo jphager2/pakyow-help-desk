@@ -4,4 +4,8 @@ class Ticket < Sequel::Model
   def self.status(name)
     STATUSES.index(name)
   end
+
+  def human_status
+    STATUSES[status]
+  end
 end

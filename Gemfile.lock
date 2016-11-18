@@ -8,27 +8,9 @@ GIT
       rake (~> 11.1)
       sequel (~> 4.25)
 
-GEM
-  remote: https://rubygems.org/
+PATH
+  remote: ~/projects/pakyow/pakyow
   specs:
-    addressable (2.5.0)
-      public_suffix (~> 2.0, >= 2.0.2)
-    ansi (1.5.0)
-    ast (2.3.0)
-    concurrent-ruby (1.0.2)
-    css_parser (1.4.6)
-      addressable
-    diff-lcs (1.2.5)
-    dotenv (2.1.1)
-    htmlentities (4.3.4)
-    mail (2.6.4)
-      mime-types (>= 1.16, < 4)
-    mime-types (3.1)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
-    oga (2.7)
-      ast
-      ruby-ll (~> 2.1)
     pakyow (0.11.3)
       bundler (~> 1.10)
       pakyow-core (= 0.11.3)
@@ -75,6 +57,28 @@ GEM
       pakyow-presenter (= 0.11.3)
       pakyow-realtime (= 0.11.3)
       pakyow-support (= 0.11.3)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
+    ansi (1.5.0)
+    ast (2.3.0)
+    concurrent-ruby (1.0.2)
+    css_parser (1.4.6)
+      addressable
+    diff-lcs (1.2.5)
+    dotenv (2.1.1)
+    htmlentities (4.3.4)
+    mail (2.6.4)
+      mime-types (>= 1.16, < 4)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    oga (2.7)
+      ast
+      ruby-ll (~> 2.1)
     pg (0.19.0)
     premailer (1.8.7)
       css_parser (>= 1.4.5)
@@ -109,7 +113,7 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv
-  pakyow (~> 0.11.3)
+  pakyow!
   pakyow-rake-db!
   pg
   puma

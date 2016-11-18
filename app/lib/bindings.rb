@@ -41,7 +41,7 @@ Pakyow::App.bindings do
   scope :'closed-ticket' do
     binding :'delete-link' do
       part :action do
-        router.group(:ticket).path(:delete, ticket_id: bindable.id)
+        router.group(:ticket).path(:remove, ticket_id: bindable.id)
       end
       part :method do
         'DELETE'

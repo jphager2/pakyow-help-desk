@@ -13,7 +13,7 @@ Pakyow::App.routes do
       data(:ticket).create(params[:ticket])
     end
 
-    delete :delete, ':ticket_id' do
+    remove do
       data(:ticket).destroy(params[:ticket_id])
     end
 

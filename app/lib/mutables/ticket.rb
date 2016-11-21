@@ -21,6 +21,9 @@ Pakyow::App.mutable :ticket do
   end
 
   query :closed do
-    Ticket.where(status: Ticket.status('closed')).all
+    Ticket
+    .where(status: Ticket.status('closed'))
+    .order(Sequel.asc(:id))
+    .all
   end
 end

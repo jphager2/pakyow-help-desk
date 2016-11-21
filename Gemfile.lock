@@ -8,8 +8,10 @@ GIT
       rake (~> 11.1)
       sequel (~> 4.25)
 
-PATH
-  remote: ~/projects/pakyow/pakyow
+GIT
+  remote: git://github.com/pakyow/pakyow.git
+  revision: 1465cbaabcca3b835402d81050edaa8c1048c113
+  branch: stable
   specs:
     pakyow (0.11.3)
       bundler (~> 1.10)

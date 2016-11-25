@@ -6,12 +6,12 @@ Pakyow::App.bindings do
   scope :'active-ticket' do
     binding :status do
       part :class do |klass|
-        # How can I make sure that the old status is removed?
+        other = Ticket::STATUSES - [bindable.human_status]
+        other.each { |status| klass.deny(status) }
         klass.ensure(bindable.human_status)
       end
       
       part :content do
-        # How can I use the api to build the attr data into the payload?
         bindable.human_status.capitalize
       end
     end
@@ -19,16 +19,15 @@ Pakyow::App.bindings do
     binding :'open-link' do
       part :action do |action|
         path = router.group(:ticket).path(:open, ticket_id: bindable.id)
-        action.ensure(path)
+        action.set(path)
       end
       part :method do |method|
-        method.ensure('PUT')
+        method.set('PUT')
       end
       part :style do |style|
         if bindable.human_status == "open"
-          # How can I use the api to build the attr data into the payload?
-          #style.update(display: 'none')
-          [['display', 'none']]
+          style.set({ display: 'none' })
+          style
         end
       end
     end
@@ -36,10 +35,10 @@ Pakyow::App.bindings do
     binding :'close-link' do
       part :action do |action|
         path = router.group(:ticket).path(:close, ticket_id: bindable.id)
-        action.ensure(path)
+        action.set(path)
       end
       part :method do |method|
-        method.ensure('PUT')
+        method.set('PUT')
       end
     end
   end
@@ -48,10 +47,10 @@ Pakyow::App.bindings do
     binding :'delete-link' do
       part :action do |action|
         path = router.group(:ticket).path(:remove, ticket_id: bindable.id)
-        action.ensure(path)
+        action.set(path)
       end
       part :method do |method|
-        method.ensure('DELETE')
+        method.set('DELETE')
       end
     end
   end
